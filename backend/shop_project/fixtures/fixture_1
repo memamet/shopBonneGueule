@@ -1,0 +1,7 @@
+- model: shop_project.shop
+  pk: 1
+  fields:
+    name: Boutique_Bleue
+    google_link: boutiquebleue@gmap.com
+
+
