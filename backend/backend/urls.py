@@ -15,11 +15,14 @@ Including another URLconf
 """
 from shop_project import views
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include, url
+from django.urls import path, include
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register(r'apparels', views.ApparelView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.index),
-    url(r'^shop_project/', include('shop_project.urls')),
+    path('api/', include(router.urls)),
 ]
