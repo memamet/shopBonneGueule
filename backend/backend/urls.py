@@ -21,6 +21,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'apparels', views.ApparelView)
+router.register(r'price-ranges', views.PriceRangeView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

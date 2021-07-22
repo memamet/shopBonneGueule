@@ -5,3 +5,8 @@ class ApparelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Apparel
         fields = ('name',)
+
+class PriceRangeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PriceRange
+        fields = ('label',)
