@@ -1,23 +1,23 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const App = () => {
+  const [apparelList, setApparelList] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/apparels").then((res) => {
+      setApparelList(res.data);
+    });
+  }, []);
+
+  const apparelOptions = apparelList.map((apparel) => {
+    return <option value={apparel.name}>{apparel.name}</option>;
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <select>{apparelOptions}</select>
     </div>
   );
 };
