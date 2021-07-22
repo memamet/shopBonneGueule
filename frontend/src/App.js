@@ -6,7 +6,7 @@ const App = () => {
   const [apparelList, setApparelList] = useState([]);
 
   useEffect(() => {
-    axios.get("api/apparels").then((res) => {
+    axios.get("/api/apparels/").then((res) => {
       setApparelList(res.data);
     });
   }, []);
