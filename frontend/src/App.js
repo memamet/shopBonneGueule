@@ -43,28 +43,25 @@ const App = () => {
 
 
   return (
-    <div>
-      <div className="App" style={styles.container}>
-        <Form>
-          <FormGroup>
-            <Label for="apparelSelect">Choisir un vêtement</Label>
-            <Input type="select" name="apparelSelect" id="apparelSelect">
-              {apparelOptions}
-            </Input>
-          </FormGroup>
-        </Form>
-      </div>
-      <div className="App" style={styles.container}>
+  
+    <div className="App" style={styles.container}>
       <Form>
         <FormGroup>
-          <Label for="priceRangeSelect">Choisir un prix</Label>
-          <Input type="select" name="priceRangeSelect" id="priceRangeSelect">
-            {priceRangeOptions}
+          <Label for="apparelSelect">Choisir un vêtement</Label>
+          <Input type="select" name="apparelSelect" id="apparelSelect">
+            {apparelOptions}
           </Input>
         </FormGroup>
+        <FormGroup>
+        <Label for="priceRangeSelect">Choisir un prix</Label>
+        <Input type="select" name="priceRangeSelect" id="priceRangeSelect">
+          {priceRangeOptions}
+        </Input>
+      </FormGroup>
       </Form>
     </div>
-  </div>
+    
+
   );
 };
 export default App;
